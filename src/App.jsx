@@ -12,7 +12,7 @@ const App = () => {
       lastName: "LOKESH",
       age: 21,
       country: "India",
-      address: "18th cross bagalguntae,Bengaluru",
+      address: "18th cross,Bengaluru",
       image: "https://t3.ftcdn.net/jpg/02/99/04/20/360_F_299042079_vGBD7wIlSeNl7vOevWHiL93G4koMM967.jpg"
     },
     {
@@ -35,15 +35,17 @@ const App = () => {
     }
   ];
   return (
+
     <div className='min-h-screen bg-gray-500 p-10'>
-      <h1 className='text-3xl font-bold text-center mb-10 text-gray-800'>Team Directory</h1>
+      <h1 className='text-4xl font-bold text-gray-50 text-center  '>Team Directory</h1>
+      <div className=' grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl max-h-6xl mx-auto p-5'>
 
-      {/*horizontal griding*/}
+        {/* Common pattern in react for render a list of components dynamically */}
 
-      <div className='grid grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto'>
         {users.map((person) => (
           <ProfileCard key={person.id} user={person} />
         ))}
+
       </div>
     </div>
   );
