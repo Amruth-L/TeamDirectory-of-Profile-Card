@@ -8,11 +8,11 @@ const App = () => {
   const users = [
     {
       id: 1,
-      firstName: "AMRUTH",
+      firstName: "Kim Taehyung",
       lastName: "LOKESH",
-      age: 21,
-      country: "India",
-      address: "18th cross,Bengaluru",
+      age: 31,
+      country: "korean",
+      address: "18th cross,korean street,Seoul",
       image: "https://t3.ftcdn.net/jpg/02/99/04/20/360_F_299042079_vGBD7wIlSeNl7vOevWHiL93G4koMM967.jpg"
     },
     {
