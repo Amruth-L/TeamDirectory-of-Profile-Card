@@ -1,39 +1,51 @@
-import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import ProfileCard from "./ProfileCard.jsx";
-
+import { useState, useEffect } from 'react';
 const App = () => {
-  const users = [
-    {
-      id: 1,
-      firstName: "AMRUTH",
-      lastName: "LOKESH",
-      age: 21,
-      country: "India",
-      address: "18th cross,Bengaluru",
-      image: "https://t3.ftcdn.net/jpg/02/99/04/20/360_F_299042079_vGBD7wIlSeNl7vOevWHiL93G4koMM967.jpg"
-    },
-    {
-      id: 2,
-      firstName: "Prajwal",
-      lastName: "Kumar",
-      age: 20,
-      country: "USA",
-      address: "123 streat mark,Boston",
-      image: "https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?semt=ais_hybrid&w=740&q=80"
-    },
-    {
-      id: 3,
-      firstName: "Bhoomika",
-      lastName: "Shashikumar",
-      age: 19,
-      country: "Korea",
-      address: "125 north  korea,Busan",
-      image: "https://png.pngtree.com/background/20250607/original/pngtree-portrait-of-a-beautiful-korean-girl-in-photorealism-style-picture-image_16634895.jpg"
-    }
-  ];
+
+  const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      const fetchedUsers = [
+        {
+          id: 1,
+          firstName: "AMRUTH",
+          lastName: "LOKESH",
+          age: 21,
+          country: "India",
+          address: "18th cross,Bengaluru",
+          image: "https://t3.ftcdn.net/jpg/02/99/04/20/360_F_299042079_vGBD7wIlSeNl7vOevWHiL93G4koMM967.jpg"
+        },
+        {
+          id: 2,
+          firstName: "Prajwal",
+          lastName: "Kumar",
+          age: 20,
+          country: "USA",
+          address: "123 streat mark,Boston",
+          image: "https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?semt=ais_hybrid&w=740&q=80"
+        },
+        {
+          id: 3,
+          firstName: "Bhoomika",
+          lastName: "Shashikumar",
+          age: 19,
+          country: "Korea",
+          address: "125 north  korea,Busan",
+          image: "https://png.pngtree.com/background/20250607/original/pngtree-portrait-of-a-beautiful-korean-girl-in-photorealism-style-picture-image_16634895.jpg"
+        }
+      ];
+      setUsers(fetchedUsers);
+      setLoading(false);
+    }, 1000);
+  }, []);
+  if (loading) {
+    return <h1 className="text-white text-center">Loading...</h1>;
+  }
   return (
 
     <div className='min-h-screen bg-gray-500 p-10'>
@@ -49,10 +61,5 @@ const App = () => {
       </div>
     </div>
   );
-
-
 };
-
-
-
 export default App;
